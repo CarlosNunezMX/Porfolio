@@ -1,0 +1,17 @@
+---
+interface Props {
+    name: string;
+    id?: string;
+    icon?: string;
+}
+
+const { name, id, icon } = Astro.props;
+---
+
+<section class="my-16">
+    <h2 class="mt-16 mb-8 text-3xl flex items-center gap-2" id={id}>
+        {icon && <i class={icon} />}
+        {name}
+    </h2>
+    <slot />
+</section>

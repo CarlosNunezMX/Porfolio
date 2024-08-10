@@ -1,0 +1,37 @@
+---
+import SocialButton from "./socialButton.astro";
+---
+
+<aside class="self-center">
+    <h1 class="text-3xl">
+        Hi ✌️, I'm <span class="dark:text-green-300 text-green-700"
+            >Carlos Núñez ‍🧑‍💻</span
+        >
+    </h1>
+
+    <p class="text-lg">
+        A <span
+            class="dark:text-green-300 dark:hover:bg-green-300 dark:hover:text-black"
+            >backend developer</span
+        >
+        who lives in Mexico 🇲🇽, and loves to make useful software for contributing
+        his society, currently studying an Informatic Engineering Degree in UdeG
+    </p>
+    <div class="flex items-stretch gap-2 my-8 flex-wrap">
+        <SocialButton
+            href="https://www.github.com/CarlosNunezMX"
+            iconName="devicon-github-original"
+        />
+        <SocialButton
+            href="mailto:carlos.nunez.calvario@yandex.com"
+            iconName="bi bi-envelope-fill"
+        >
+            carlos.nunez.calvario@yandex.com
+        </SocialButton>
+        <SocialButton
+            iconName="bi bi-discord"
+            href=" https://discordapp.com/channels/@me/435184826329464841/"
+            >@karurosu_nunyezu</SocialButton
+        >
+    </div>
+</aside>

@@ -1,0 +1,16 @@
+---
+interface Props {
+    name: string;
+    icon?: string;
+}
+const { icon, name } = Astro.props;
+---
+
+<div
+    class={"px-6 py-3 flex flex-col gap-2 place-items-center rounded dark:bg-gray-800 border-gray-500 border bg-slate-300"}
+>
+    <slot>
+        <i class={"devicon-" + icon + "-plain text-5xl"}></i>
+    </slot>
+    <span class="text-xl">{name}</span>
+</div>

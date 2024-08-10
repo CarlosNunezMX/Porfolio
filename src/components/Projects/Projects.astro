@@ -1,0 +1,15 @@
+---
+import Section from "../section.astro";
+import DataProjects from "./Project";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<Section name="Projects" id="projects" icon="bi bi-code-slash">
+    <ul class="grid-cols-2 md:grid-cols-3 gap-3 inline-grid items-stretch">
+        {
+            DataProjects.map(({ description, img, name, url }) => (
+                <ProjectCard {url} {img} {name} {description} />
+            ))
+        }
+    </ul>
+</Section>
