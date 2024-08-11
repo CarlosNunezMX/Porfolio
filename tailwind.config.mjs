@@ -7,5 +7,6 @@ export default {
 			'agave': ["Agave", "monospace"]
 		}
 	},
+	darkMode: "class",
 	plugins: [],
 }

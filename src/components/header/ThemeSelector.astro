@@ -1,0 +1,99 @@
+---
+const themes = ["bi-laptop-fill", "bi-moon-fill", "bi-sun-fill"];
+---
+
+<div class="relative">
+    <i class="bi text-yellow-500" id="currentTheme"></i>
+    <ul
+        id="theme-list"
+        class="mt-4 fixed dark:bg-blue-900 drop-shadow-lg rounded-full hidden shadow-white -mx-3 transition-all ease-in-out delay-75 text-black dark:text-white bg-gray-400"
+    >
+        {
+            themes.map((theme) => (
+                <li class="p-3">
+                    <i
+                        x-theme={theme}
+                        class={
+                            "bi " +
+                            theme +
+                            " hover:text-yellow-300 ease-linear delay-300 transition-colors cursor-pointer"
+                        }
+                    />
+                </li>
+            ))
+        }
+    </ul>
+</div>
+
+<script>
+    import { imageConfig } from "astro:assets";
+
+    type Themes = "system" | "dark" | "light";
+    const $icon = document.getElementById("currentTheme");
+    let remove: null | (() => void) = null;
+    const $theme_list = document.getElementById("theme-list");
+    const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+    const getThemePreference: () => Themes = () => {
+        if (typeof localStorage !== "undefined") {
+            return (localStorage.getItem("theme") ?? "system") as Themes;
+        }
+
+        return (
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light"
+        ) as Themes;
+    };
+
+    const themes = {
+        system: "bi-laptop-fill",
+        dark: "bi-moon-fill",
+        light: "bi-sun-fill",
+    } as Record<Themes, string>;
+
+    function UpdateIcon() {
+        const icon = getThemePreference();
+        $icon?.classList.remove(...Object.values(themes));
+        $icon?.classList.add(themes[icon]);
+    }
+
+    function Toggle() {
+        $theme_list?.classList[
+            $theme_list.classList.contains("hidden") ? "remove" : "add"
+        ]("hidden");
+    }
+
+    function ChangeTheme(event: MouseEvent) {
+        const theme = (event.target as HTMLElement).getAttribute("x-theme");
+        if (!theme) return;
+        const selected_theme = Object.keys(themes).find(
+            (key) => themes[key as Themes] === theme,
+        );
+        if (!selected_theme) return;
+
+        localStorage.setItem("theme", selected_theme);
+        Update();
+    }
+
+    function Update() {
+        if (remove != null) {
+            remove();
+        }
+        matchMedia.addEventListener("change", Update);
+        remove = () => {
+            matchMedia.removeEventListener("change", Update);
+        };
+
+        const themePreference = getThemePreference();
+        const isDark =
+            themePreference === "dark" ||
+            (themePreference === "system" && matchMedia.matches);
+
+        UpdateIcon();
+        document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    }
+
+    $theme_list?.addEventListener("click", (event) => ChangeTheme(event));
+    $icon?.addEventListener("click", () => Toggle());
+    Update();
+</script>
