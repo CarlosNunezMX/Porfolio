@@ -1,0 +1,52 @@
+{
+    "SEO_TITLE": "Carlos Nuñez - Porfolio",
+    "SEO_DESCRIPTION": "Carlos Nuñez es un desarrollador backend(semi-fullstack) de javascript-typescript",
+    "SEO_KEYS": "developer, carlosnuñezmx, carlosnunez, Carlos Nuñez, Carlos Nuñez MX, backend guadalajara",
+    "HERO": {
+        "TITLE": "Hi ✌️, I'm ",
+        "CONTENT": [
+            "A",
+            "who lives in Mexico 🇲🇽, and loves to make useful software for contributing his society, currently studying an Informatic Engineering Degree in UdeG"
+        ],
+        "CONTENT_HIGHLIGHTED": "backend developer"
+    },
+    "NAV": [
+        {
+            "TITLE": "Projects",
+            "URL": "#projects"
+        },
+        {
+            "TITLE": "Skills",
+            "URL": "#stack"
+        }
+    ],
+    "PROJECTS": {
+        "TITLE": "Projects",
+        "PROJECTS": [
+            {
+                "name": "Aru",
+                "description": "A Leo(aka SIIAU 2) API Wrapper",
+                "url": "https://github.com/CarlosNunezMX/aru",
+                "img": "https://github.com/CarlosNunezMX/aru/raw/master/AppIcon.png"
+            },
+            {
+                "name": "Yashigiri",
+                "description": "A library to create conversational flows",
+                "url": "https://github.com/CarlosNunezMX/Yashigiri",
+                "img": "https://www.github.com/CarlosNunezMX/Yashigiri/raw/main/docs/Yashigiri.png"
+            },
+            {
+                "name": "AnimeFLV",
+                "description": "Scrap and get latest anime from AnimeFLV, is made in Typescript",
+                "img": "https://github.com/CarlosNunezMX/AnimeFLV/raw/master/AnimeFLV.png",
+                "url": "https://github.com/CarlosNunezMX/AnimeFLV"
+            },
+            {
+                "name": "Novel Cool",
+                "description": "Novel Cool Book scraper, supports multilang and book download",
+                "url": "https://github.com/CarlosNunezMX/novel-cool",
+                "img": "https://github.com/CarlosNunezMX/novel-cool/raw/master/NovelCool.png"
+            }
+        ]
+    }
+}

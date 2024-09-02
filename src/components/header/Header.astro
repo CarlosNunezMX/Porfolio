@@ -1,17 +1,25 @@
 ---
+import { getI18N, type langs } from "../../i18n/handler";
 import ThemeSelector from "./ThemeSelector.astro";
+
+const { NAV } = getI18N({ currentLocale: Astro.currentLocale as langs });
+console.log(NAV);
 ---
 
 <nav class="fixed w-full top-0 left-0 flex justify-center mt-3">
     <ul
         class="flex gap-5 bg-slate-300 dark:bg-blue-950 rounded-full px-5 py-3 w-[80%] md:w-[30%]"
     >
-        <a href="#projects" class="text-center w-full hover:dark:text-green-200"
-            ><li>Projects</li></a
-        >
-        <a href="#stack" class="text-center w-full hover:dark:text-green-200"
-            ><li>Skills</li></a
-        >
+        {
+            NAV.map((item) => (
+                <a
+                    href={item.URL}
+                    class="text-center w-full hover:dark:text-green-200"
+                >
+                    <li>{item.TITLE}</li>
+                </a>
+            ))
+        }
         <ThemeSelector />
         <!-- <a href="#aboutme" class="text-center w-full hover:dark:text-green-200"
             ><li>About me</li></a

@@ -1,21 +1,26 @@
 ---
+import { getI18N, type langs } from "../../i18n/handler";
 import SocialButton from "./socialButton.astro";
+// @ts-ignore
+const { HERO } = getI18N({
+    currentLocale: (Astro.currentLocale || "es") as langs,
+});
+console.log(HERO);
 ---
 
 <aside class="self-center">
     <h1 class="text-3xl">
-        Hi ✌️, I'm <span class="dark:text-green-300 text-green-700"
-            >Carlos Núñez ‍🧑‍💻</span
-        >
+        {HERO.TITLE}
+        <span class="dark:text-green-300 text-green-700">Carlos Núñez ‍🧑‍💻</span>
     </h1>
 
     <p class="text-lg">
-        A <span
-            class="dark:text-green-300 dark:hover:bg-green-300 dark:hover:text-black"
-            >backend developer</span
+        {HERO.CONTENT[0]}
+        <span
+            class="dark:text-green-300 hover:bg-green-700 hover:text-white text-green-700 transition-colors ease-in-out delay-100 dark:hover:bg-green-300 dark:hover:text-black"
+            >{HERO.CONTENT_HIGHLIGHTED}</span
         >
-        who lives in Mexico 🇲🇽, and loves to make useful software for contributing
-        his society, currently studying an Informatic Engineering Degree in UdeG
+        {HERO.CONTENT[1]}
     </p>
     <div class="flex items-stretch gap-2 my-8 flex-wrap">
         <SocialButton
