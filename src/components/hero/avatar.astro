@@ -1,10 +1,19 @@
+---
+import { getI18N, type langs } from "../../i18n/handler";
+
+const {
+    HERO: { CURRENTLY_LEARNING },
+} = getI18N({ currentLocale: Astro.currentLocale as langs });
+---
+
 <div
     class="relative self-end flex items-end justify-end motion-safe:animate-bounce"
 >
     <div
         class="absolute bg-gray-800 px-3 py-1 rounded -right-5 bg-clip-border border-gray-50 border-2"
     >
-        Currently learning Java
+        {CURRENTLY_LEARNING.TITLE}
+        {CURRENTLY_LEARNING.VALUE}
     </div>
     <img src="/avatar.webp" alt="CarlosNuñezMX Avatar" />
 </div>

@@ -8,7 +8,11 @@
             "A",
             "who lives in Mexico 🇲🇽, and loves to make useful software for contributing his society, currently studying an Informatic Engineering Degree in UdeG"
         ],
-        "CONTENT_HIGHLIGHTED": "backend developer"
+        "CONTENT_HIGHLIGHTED": "backend developer",
+        "CURRENTLY_LEARNING": {
+            "TITLE": "Aprendiendo ",
+            "VALUE": "Java"
+        }
     },
     "NAV": [
         {

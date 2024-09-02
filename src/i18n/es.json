@@ -8,7 +8,11 @@
             "Un",
             "que vive en México 🇲🇽, le gusta crear software util para su para su sociedad, destapar los sistemas informaticos y descubrir como estan hechos. Actualimente estudia una Ingienería Informatica en UdeG"
         ],
-        "CONTENT_HIGHLIGHTED": "desarrollador backend"
+        "CONTENT_HIGHLIGHTED": "desarrollador backend",
+        "CURRENTLY_LEARNING": {
+            "TITLE": "Aprendiendo ",
+            "VALUE": "Java"
+        }
     },
     "NAV": [
         {
